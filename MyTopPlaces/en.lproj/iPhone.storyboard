@@ -89,7 +89,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="YVA-32-0xZ" kind="push" id="Apf-hL-XHz"/>
+                                    <segue destination="b4n-Hl-Ofe" kind="push" id="FTe-ue-a46"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -138,7 +138,7 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <connections>
-                                    <segue destination="YVA-32-0xZ" kind="push" id="bfP-0u-7Iw"/>
+                                    <segue destination="b4n-Hl-Ofe" kind="push" id="D2S-YE-nEX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -151,37 +151,6 @@
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="1171" y="731"/>
-        </scene>
-        <!--Photo View Controller-->
-        <scene sceneID="QSK-9x-Hip">
-            <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eFg-7a-bDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="YVA-32-0xZ" customClass="PhotoViewController" sceneMemberID="viewController">
-                    <view key="view" autoresizesSubviews="NO" contentMode="scaleToFill" id="2Ap-Zv-g46">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.20000000000000001" maximumZoomScale="5" id="LgH-mZ-La2">
-                                <rect key="frame" x="-20" y="-20" width="360" height="500"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="tyD-hk-WdH">
-                                        <rect key="frame" x="20" y="20" width="320" height="460"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                    </imageView>
-                                </subviews>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="ElM-I5-RQY"/>
-                    <connections>
-                        <outlet property="photoView" destination="tyD-hk-WdH" id="1K1-zA-hGI"/>
-                        <outlet property="scrollView" destination="LgH-mZ-La2" id="ujm-Wk-J0h"/>
-                    </connections>
-                </viewController>
-            </objects>
-            <point key="canvasLocation" x="2158" y="450"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="19L-hc-7tU">
@@ -225,7 +194,7 @@
         <scene sceneID="4Qy-IF-sPP">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ERO-sF-RSt" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tabBarController id="DLs-gc-4kl" sceneMemberID="viewController">
+                <tabBarController definesPresentationContext="YES" id="DLs-gc-4kl" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="kOg-ep-lhy">
@@ -239,31 +208,45 @@
             </objects>
             <point key="canvasLocation" x="7" y="483"/>
         </scene>
+        <!--My Photo View Controller-->
+        <scene sceneID="HFh-7x-ZYq">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxJ-nS-Hpe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController hidesBottomBarWhenPushed="YES" id="b4n-Hl-Ofe" customClass="MyPhotoViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pTl-Fs-c9o">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.10000000000000001" maximumZoomScale="10" id="dZZ-D2-7cz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="GGa-bH-Cvn">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
+                                </subviews>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Gv8-PX-YlJ"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="GGa-bH-Cvn" id="rG9-tE-9VU"/>
+                        <outlet property="scrollView" destination="dZZ-D2-7cz" id="rio-A1-LdW"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2014" y="695"/>
+        </scene>
     </scenes>
-    <classes>
-        <class className="PhotoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="photoView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="PhotosInPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlacesTableViewController.h"/>
-        </class>
-        <class className="RecentsTableViewController" superclassName="PhotosInPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentsTableViewController.h"/>
-        </class>
-        <class className="TopPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="bfP-0u-7Iw"/>
+        <segue reference="D2S-YE-nEX"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,7 +8,7 @@
 
 #import "PhotosInPlacesTableViewController.h"
 #import "FlickrFetcher.h"
-#import "PhotoViewController.h"
+#import "MyPhotoViewController.h"
 #import "RecentsUserDefaults.h"
 
 @interface PhotosInPlacesTableViewController ()
@@ -90,7 +90,7 @@
     NSDictionary *photo = [self.photos objectAtIndex:path.row];
     [segue.destinationViewController setPhoto:photo];
     [segue.destinationViewController setTitle:[[sender textLabel] text]];
-    [RecentsUserDefaults saveRecentsUserDefaults:photo];
+//    [RecentsUserDefaults saveRecentsUserDefaults:photo];
 }
 
 

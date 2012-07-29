@@ -18,9 +18,10 @@
 		E4624B7015C06AF100537F77 /* FlickrFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B6F15C06AF100537F77 /* FlickrFetcher.m */; };
 		E4624B7315C06B5600537F77 /* TopPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B7215C06B5600537F77 /* TopPlacesTableViewController.m */; };
 		E4624B7615C07D2F00537F77 /* PhotosInPlacesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B7515C07D2F00537F77 /* PhotosInPlacesTableViewController.m */; };
-		E4624B7D15C1211300537F77 /* PhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B7C15C1211300537F77 /* PhotoViewController.m */; };
 		E4624B8A15C16C9900537F77 /* RecentsUserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B8915C16C9900537F77 /* RecentsUserDefaults.m */; };
 		E4624B8D15C16E9200537F77 /* RecentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4624B8C15C16E9200537F77 /* RecentsTableViewController.m */; };
+		E48F83DF15C438B500149B5D /* Giants.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E48F83DE15C438B500149B5D /* Giants.jpg */; };
+		E48F83EB15C45F5900149B5D /* MyPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F83EA15C45F5900149B5D /* MyPhotoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,12 +44,13 @@
 		E4624B7215C06B5600537F77 /* TopPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopPlacesTableViewController.m; sourceTree = "<group>"; };
 		E4624B7415C07D2F00537F77 /* PhotosInPlacesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosInPlacesTableViewController.h; sourceTree = "<group>"; };
 		E4624B7515C07D2F00537F77 /* PhotosInPlacesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosInPlacesTableViewController.m; sourceTree = "<group>"; };
-		E4624B7B15C1211300537F77 /* PhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoViewController.h; sourceTree = "<group>"; };
-		E4624B7C15C1211300537F77 /* PhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoViewController.m; sourceTree = "<group>"; };
 		E4624B8815C16C9900537F77 /* RecentsUserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsUserDefaults.h; sourceTree = "<group>"; };
 		E4624B8915C16C9900537F77 /* RecentsUserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsUserDefaults.m; sourceTree = "<group>"; };
 		E4624B8B15C16E9200537F77 /* RecentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecentsTableViewController.h; sourceTree = "<group>"; };
 		E4624B8C15C16E9200537F77 /* RecentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecentsTableViewController.m; sourceTree = "<group>"; };
+		E48F83DE15C438B500149B5D /* Giants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Giants.jpg; sourceTree = "<group>"; };
+		E48F83E915C45F5900149B5D /* MyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoViewController.h; sourceTree = "<group>"; };
+		E48F83EA15C45F5900149B5D /* MyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +101,11 @@
 				E4624B5615C06A4700537F77 /* MyTopPlacesAppDelegate.h */,
 				E4624B5715C06A4700537F77 /* MyTopPlacesAppDelegate.m */,
 				E4624B5915C06A4700537F77 /* iPhone.storyboard */,
+				E48F83E915C45F5900149B5D /* MyPhotoViewController.h */,
+				E48F83EA15C45F5900149B5D /* MyPhotoViewController.m */,
+				E48F83DE15C438B500149B5D /* Giants.jpg */,
 				E4624B8B15C16E9200537F77 /* RecentsTableViewController.h */,
 				E4624B8C15C16E9200537F77 /* RecentsTableViewController.m */,
-				E4624B7B15C1211300537F77 /* PhotoViewController.h */,
-				E4624B7C15C1211300537F77 /* PhotoViewController.m */,
 				E4624B7415C07D2F00537F77 /* PhotosInPlacesTableViewController.h */,
 				E4624B7515C07D2F00537F77 /* PhotosInPlacesTableViewController.m */,
 				E4624B8815C16C9900537F77 /* RecentsUserDefaults.h */,
@@ -190,6 +193,7 @@
 				E4624B5215C06A4700537F77 /* InfoPlist.strings in Resources */,
 				E4624B5B15C06A4700537F77 /* iPhone.storyboard in Resources */,
 				E4624B5E15C06A4700537F77 /* iPad.storyboard in Resources */,
+				E48F83DF15C438B500149B5D /* Giants.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,9 +209,9 @@
 				E4624B7015C06AF100537F77 /* FlickrFetcher.m in Sources */,
 				E4624B7315C06B5600537F77 /* TopPlacesTableViewController.m in Sources */,
 				E4624B7615C07D2F00537F77 /* PhotosInPlacesTableViewController.m in Sources */,
-				E4624B7D15C1211300537F77 /* PhotoViewController.m in Sources */,
 				E4624B8A15C16C9900537F77 /* RecentsUserDefaults.m in Sources */,
 				E4624B8D15C16E9200537F77 /* RecentsTableViewController.m in Sources */,
+				E48F83EB15C45F5900149B5D /* MyPhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +333,7 @@
 				E4624B6615C06A4700537F77 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

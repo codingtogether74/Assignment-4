@@ -69,7 +69,12 @@
     NSString *placeFullName = [topPlace objectForKey:FLICKR_PLACE_NAME];
     NSArray *placeArray = [placeFullName componentsSeparatedByString:@", "];
     NSString *placeCityName = [placeArray objectAtIndex:0];
-    NSString *placeRestName = [NSString stringWithFormat:@"%@, %@",[placeArray objectAtIndex:1],[placeArray objectAtIndex:2]];
+    NSString *placeRestName;
+    if ([placeArray count]<=2) {
+        placeRestName = [NSString stringWithFormat:@"%@",[placeArray objectAtIndex:1]];
+    } else{
+        placeRestName = [NSString stringWithFormat:@"%@, %@",[placeArray objectAtIndex:1],[placeArray objectAtIndex:2]];
+    }
     cell.textLabel.text = placeCityName;
     cell.detailTextLabel.text = placeRestName;
     return cell;
