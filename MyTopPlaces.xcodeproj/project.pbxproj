@@ -51,6 +51,7 @@
 		E48F83DE15C438B500149B5D /* Giants.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Giants.jpg; sourceTree = "<group>"; };
 		E48F83E915C45F5900149B5D /* MyPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoViewController.h; sourceTree = "<group>"; };
 		E48F83EA15C45F5900149B5D /* MyPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoViewController.m; sourceTree = "<group>"; };
+		E48F840115C5DD0B00149B5D /* SplitViewBarButtonItemPresenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewBarButtonItemPresenter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,7 @@
 				E4624B8C15C16E9200537F77 /* RecentsTableViewController.m */,
 				E4624B7415C07D2F00537F77 /* PhotosInPlacesTableViewController.h */,
 				E4624B7515C07D2F00537F77 /* PhotosInPlacesTableViewController.m */,
+				E48F840115C5DD0B00149B5D /* SplitViewBarButtonItemPresenter.h */,
 				E4624B8815C16C9900537F77 /* RecentsUserDefaults.h */,
 				E4624B8915C16C9900537F77 /* RecentsUserDefaults.m */,
 				E4624B7115C06B5600537F77 /* TopPlacesTableViewController.h */,

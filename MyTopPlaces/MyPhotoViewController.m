@@ -14,9 +14,11 @@
 #define PHOTO_ID_KEY @"id"
 #define TOO_MANY_PHOTOS 20
 
-@interface MyPhotoViewController ()<UIScrollViewDelegate>
+@interface MyPhotoViewController ()<UIScrollViewDelegate, UISplitViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *toolBarButton;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 @end
 
 @implementation MyPhotoViewController
@@ -24,9 +26,17 @@
 
 @synthesize imageView = _imageView;
 @synthesize scrollView = _scrollView;
+@synthesize toolBarButton = _toolBarButton;
+@synthesize toolBar = _toolBar;
 @synthesize photo = _photo;
+@synthesize splitViewBarButtonItem = _splitViewBarButtonItem;
 
-- (NSData*) fetchImage {	
+- (void)awakeFromNib
+{
+    [super awakeFromNib];
+    self.splitViewController.delegate = self; //if put in viewDidLoad, delegate will be too late to assign, no button first launch
+}
+- (NSData*) fetchImage {
     // Return the image from Flickr
 	return [NSData dataWithContentsOfURL:[FlickrFetcher urlForPhoto:self.photo format:FlickrPhotoFormatLarge]];
 }
@@ -57,9 +67,24 @@
 	self.scrollView.zoomScale = MAX(wScale, hScale);
 }
 
+- (void)refreshWithPhoto:(NSDictionary *)photoDictionary {
+	
+	// Setup the model
+	self.photo = photoDictionary;
+	
+	// Refresh the view
+	[self refresh];
+	
+}
+
 - (void)refresh {
 	
-		NSString *photoID = [self.photo objectForKey:PHOTO_ID_KEY];
+//    NSString *title ;
+//    if (self.photo) title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];
+//    self.navigationItem.title = title;
+//    self.toolBarButton.title = title;
+
+    NSString *photoID = [self.photo objectForKey:PHOTO_ID_KEY];
 		NSData *imageData = [self fetchImage];
 					
 			// Only store and display if another photo hasn't been selected
@@ -75,6 +100,9 @@
 	
 	[super viewDidLoad];
 	self.scrollView.delegate = self;
+	// Set this instance as the split view delegate
+//	self.splitViewController.delegate = self;
+    [self handleSplitViewBarButtonItem:self.splitViewBarButtonItem];
 	
 }
 
@@ -94,6 +122,8 @@
 - (void)viewDidUnload {
 	[self setImageView:nil];
 	[self setScrollView:nil];
+    [self setToolBar:nil];
+    [self setToolBarButton:nil];
 	[super viewDidUnload];
 }
 
@@ -108,5 +138,50 @@
 	return self.imageView;
 }
 
+#pragma mark - Split View Controller
 
+- (void)handleSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    NSMutableArray *toolbarItems = [self.toolBar.items mutableCopy];
+    if (_splitViewBarButtonItem) [toolbarItems removeObject:_splitViewBarButtonItem];
+    if (splitViewBarButtonItem) [toolbarItems insertObject:splitViewBarButtonItem atIndex:0];
+    self.toolBar.items = toolbarItems;
+    _splitViewBarButtonItem = splitViewBarButtonItem;
+}
+
+- (void)setSplitViewBarButtonItem:(UIBarButtonItem *)splitViewBarButtonItem
+{
+    if (_splitViewBarButtonItem != splitViewBarButtonItem)
+        [self handleSplitViewBarButtonItem:splitViewBarButtonItem];
+}
+
+- (id <SplitViewBarButtonItemPresenter>)splitViewBarButtonItemPresenter {
+    id detailVC = [self.splitViewController.viewControllers lastObject];
+    if (![detailVC conformsToProtocol:@protocol(SplitViewBarButtonItemPresenter)]) detailVC = nil;
+    return detailVC;
+}
+
+- (BOOL)splitViewController:(UISplitViewController *)svc
+   shouldHideViewController:(UIViewController *)vc
+              inOrientation:(UIInterfaceOrientation)orientation
+{
+    return [self splitViewBarButtonItemPresenter] ? UIInterfaceOrientationIsPortrait(orientation) : NO;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willHideViewController:(UIViewController *)aViewController
+          withBarButtonItem:(UIBarButtonItem *)barButtonItem
+       forPopoverController:(UIPopoverController *)pc
+{
+    // add button to toolbar
+    barButtonItem.title = @"Place";
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem =barButtonItem;
+}
+
+- (void)splitViewController:(UISplitViewController *)svc
+     willShowViewController:(UIViewController *)aViewController
+  invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
+{
+    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
+}
 @end

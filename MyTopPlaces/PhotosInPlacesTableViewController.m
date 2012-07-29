@@ -92,6 +92,22 @@
     [segue.destinationViewController setTitle:[[sender textLabel] text]];
 //    [RecentsUserDefaults saveRecentsUserDefaults:photo];
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+    NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+    NSDictionary *photo = [self.photos objectAtIndex:path.row];
+	// Get a handle to the detail view controller
+    
+	MyPhotoViewController *photoViewController =
+    [[self.splitViewController viewControllers] lastObject];
+	
+	if (photoViewController) {
+		// Set up the photoViewController model and synchronize it's views
+		[photoViewController refreshWithPhoto:photo];
+	} // otherwise handled by the segue
+	
+}
+
 
 
 @end
