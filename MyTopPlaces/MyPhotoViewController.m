@@ -88,7 +88,6 @@
 
     NSString *photoID = [self.photo objectForKey:PHOTO_ID_KEY];
 		NSData *imageData = [self fetchImage];
-	self.splitViewController.delegate = self;				
 			// Only store and display if another photo hasn't been selected
 			if ([photoID isEqualToString:[self.photo objectForKey:PHOTO_ID_KEY]]) {
                 [RecentsUserDefaults saveRecentsUserDefaults:self.photo];
