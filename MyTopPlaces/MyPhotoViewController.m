@@ -65,12 +65,14 @@
 	float wScale = self.view.bounds.size.width / self.imageView.frame.size.width;
 	float hScale = self.view.bounds.size.height / self.imageView.frame.size.height;
 	self.scrollView.zoomScale = MAX(wScale, hScale);
+    [self.imageView setNeedsDisplay];
 }
 
 - (void)refreshWithPhoto:(NSDictionary *)photoDictionary {
 	
 	// Setup the model
 	self.photo = photoDictionary;
+    self.toolBarButton.title=[self.photo objectForKey:FLICKR_PHOTO_TITLE];
 	
 	// Refresh the view
 	[self refresh];
@@ -79,20 +81,20 @@
 
 - (void)refresh {
 	
-//    NSString *title ;
-//    if (self.photo) title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];
-//    self.navigationItem.title = title;
-//    self.toolBarButton.title = title;
+//   NSString *title =@"nnnnn";
+//   if (self.photo) title = [self.photo objectForKey:FLICKR_PHOTO_TITLE];
+//   self.navigationItem.title = title;
+//   self.toolBarButton.title = title;
 
     NSString *photoID = [self.photo objectForKey:PHOTO_ID_KEY];
 		NSData *imageData = [self fetchImage];
-					
+	self.splitViewController.delegate = self;				
 			// Only store and display if another photo hasn't been selected
 			if ([photoID isEqualToString:[self.photo objectForKey:PHOTO_ID_KEY]]) {
                 [RecentsUserDefaults saveRecentsUserDefaults:self.photo];
 				[self synchronizeViewWithImage:imageData];
 				[self fillView]; // Sets the zoom level to fill screen
-			}			
+			}
 }
 
 
@@ -182,6 +184,6 @@
      willShowViewController:(UIViewController *)aViewController
   invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
 {
-    [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
+   [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = nil;
 }
 @end
