@@ -2,13 +2,13 @@
 //  PhotosInPlacesTableViewController.m
 //  MyTopPlaces
 //
-//  Created by Olga Avanesova on 7/25/12.
+//  Created by Tatiana Kornilova on 7/26/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "PhotosInPlacesTableViewController.h"
 #import "FlickrFetcher.h"
-#import "MyPhotoViewController.h"
+#import "TopPlacesPhotoViewController.h"
 #import "RecentsUserDefaults.h"
 
 @interface PhotosInPlacesTableViewController ()
@@ -98,12 +98,12 @@
     NSDictionary *photo = [self.photos objectAtIndex:path.row];
 	// Get a handle to the detail view controller
     
-	MyPhotoViewController *photoViewController =
+	TopPlacesPhotoViewController *photoViewController =
     [[self.splitViewController viewControllers] lastObject];
 	
 	if (photoViewController) {
 		// Set up the photoViewController model and synchronize it's views
-		[photoViewController refreshWithPhoto:photo];
+		[photoViewController setPhoto:photo];
 	} // otherwise handled by the segue
 	
 }

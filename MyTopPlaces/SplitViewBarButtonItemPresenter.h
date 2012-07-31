@@ -1,8 +1,8 @@
 //
 //  SplitViewBarButtonItemPresenter.h
-//  Psychologist
+//  MyTopPlaces
 //
-//  Created by Martin Mandl on 07.01.12.
+//  Created by Tatiana Kornilova on 7/26/12.
 //  Copyright (c) 2012 m2m. All rights reserved.
 //
 

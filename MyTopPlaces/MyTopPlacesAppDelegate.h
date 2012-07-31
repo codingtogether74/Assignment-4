@@ -2,7 +2,7 @@
 //  MyTopPlacesAppDelegate.h
 //  MyTopPlaces
 //
-//  Created by Olga Avanesova on 7/25/12.
+//  Created by Tatiana Kornilova on 7/28/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
