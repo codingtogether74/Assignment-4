@@ -156,8 +156,9 @@
 */
     static NSString *CellIdentifier = @"Top Place Description";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
 	// Get a handle the dictionary that contains the selected top place information
 	NSDictionary *topPlaceDictionary =
 	[[self.placesByCountry objectForKey:[self.sectionHeaders objectAtIndex:indexPath.section]]

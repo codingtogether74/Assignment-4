@@ -67,6 +67,9 @@
 
     static NSString *CellIdentifier = @"Photos Description";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
     NSDictionary *photo = [self.photos objectAtIndex:indexPath.row];
     NSString *photoTitle = [photo objectForKey:FLICKR_PHOTO_TITLE];
     NSString *photoDescription = [photo valueForKeyPath:FLICKR_PHOTO_DESCRIPTION];

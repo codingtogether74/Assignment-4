@@ -36,7 +36,7 @@
           withBarButtonItem:(UIBarButtonItem *)barButtonItem 
        forPopoverController:(UIPopoverController *)pc {
     
-    barButtonItem.title = @"Place";
+    barButtonItem.title = @"Top photos";
     
     [self splitViewBarButtonItemPresenter].splitViewBarButtonItem = barButtonItem;
 }
