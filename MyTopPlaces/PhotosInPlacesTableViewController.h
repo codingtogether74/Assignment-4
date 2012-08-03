@@ -10,5 +10,5 @@
 
 @interface PhotosInPlacesTableViewController : UITableViewController
 @property (nonatomic, strong) NSDictionary *place;
-@property (nonatomic, strong) NSArray *photos;
+@property (nonatomic, strong) NSMutableArray *photos;
 @end

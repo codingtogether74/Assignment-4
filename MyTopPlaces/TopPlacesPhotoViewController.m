@@ -70,7 +70,7 @@
     UIBarButtonItem *titleButton = [toolbarItems objectAtIndex:[toolbarItems count]-2];
     titleButton.title = _photoTitle;
     // title for the iPhone
-    self.title = _photoTitle;
+  self.title = _photoTitle;
 }
    
 - (void)fillView
@@ -93,10 +93,6 @@
 				[self synchronizeViewWithImage:photoData];
 				[self fillView]; // Sets the zoom level to fill screen
 			}
-/*
-            UIImage *image = [[UIImage alloc] initWithData:photoData];
-            [self.photoImageView setImage:image];
-*/            
             // Assignment 4 - task 7
             self.photoTitle = [self.photo valueForKey:FLICKR_PHOTO_TITLE];
         } else {
@@ -122,7 +118,7 @@
     // instruction from lecture 8
     self.photoScrollView.delegate = self;
     // get the actual photo now that the view is loading
-    [self loadPhoto];
+//    [self loadPhoto];
     
 }
 

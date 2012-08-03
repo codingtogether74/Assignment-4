@@ -161,7 +161,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackTranslucent"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="2157" y="-390"/>
+            <point key="canvasLocation" x="1237" y="-370"/>
         </scene>
         <!--Navigation Controller - Top Places-->
         <scene sceneID="rUu-jq-B9s">
@@ -201,7 +201,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="1671" y="-404"/>
+            <point key="canvasLocation" x="809" y="-370"/>
         </scene>
         <!--Top Places Photo Generic Tab Bar Controller-->
         <scene sceneID="8Wq-eF-SdY">
@@ -247,7 +247,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="T08-VE-vvX"/>
-                                    <barButtonItem title="photo title" style="plain" id="eFe-OF-1zl"/>
+                                    <barButtonItem title="no photo selected" style="plain" id="eFe-OF-1zl"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="kdN-1d-Jqt"/>
                                 </items>
                             </toolbar>
@@ -264,7 +264,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-328" y="825"/>
+            <point key="canvasLocation" x="-148" y="851"/>
         </scene>
     </scenes>
     <resources>
@@ -272,28 +272,6 @@
         <image name="42-photos.png" width="22" height="24"/>
         <image name="koshki-puzyri-zhivotnye-14712.jpg" width="240" height="320"/>
     </resources>
-    <classes>
-        <class className="PhotosInPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PhotosInPlacesTableViewController.h"/>
-        </class>
-        <class className="RecentsTableViewController" superclassName="PhotosInPlacesTableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RecentsTableViewController.h"/>
-        </class>
-        <class className="TopPlacesPhotoGenericTabBarController" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesPhotoGenericTabBarController.h"/>
-        </class>
-        <class className="TopPlacesPhotoViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesPhotoViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="photoImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="photoScrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="toolbar" candidateClass="UIToolbar"/>
-            </relationships>
-        </class>
-        <class className="TopPlacesTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TopPlacesTableViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

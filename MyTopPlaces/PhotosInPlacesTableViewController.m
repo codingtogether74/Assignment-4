@@ -19,7 +19,7 @@
 @synthesize place=_place;
 @synthesize photos=_photos;
 
--(void)setPhotos:(NSArray *)photos
+-(void)setPhotos:(NSMutableArray *)photos
 {
     if (_photos!=photos) {
         _photos=photos;
@@ -39,7 +39,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *photos = [FlickrFetcher photosInPlace:self.place maxResults:50];
+    NSMutableArray *photos = [[FlickrFetcher photosInPlace:self.place maxResults:50] mutableCopy];
     self.photos = photos;
 
 }
@@ -92,7 +92,7 @@
     NSIndexPath *path = [self.tableView indexPathForSelectedRow];
     NSDictionary *photo = [self.photos objectAtIndex:path.row];
     [segue.destinationViewController setPhoto:photo];
-    [segue.destinationViewController setTitle:[[sender textLabel] text]];
+//    [segue.destinationViewController setTitle:[[sender textLabel] text]];
 //    [RecentsUserDefaults saveRecentsUserDefaults:photo];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
