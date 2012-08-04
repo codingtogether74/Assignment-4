@@ -115,10 +115,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // instruction from lecture 8
     self.photoScrollView.delegate = self;
-    // get the actual photo now that the view is loading
-//    [self loadPhoto];
     
 }
 
